@@ -1,0 +1,9 @@
+Name = <%= node[:tinc][:hostname] %>
+Device = /dev/net/tun
+Mode = switch
+TCPOnly = yes
+
+<% for connect_to in node[:tinc][:connect_to] %>
+ConnectTo = <%= connect_to %>
+<% end %>
+
